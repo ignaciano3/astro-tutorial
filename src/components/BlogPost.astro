@@ -1,0 +1,37 @@
+---
+type Props = {
+  title: string;
+  pubDate: string;
+  url: string;
+};
+const { title, pubDate, url } = Astro.props;
+---
+
+<article>
+  <h2>{title}</h2>
+  <time datetime={pubDate}>{pubDate}</time>
+  <a href={url}>See more</a>
+</article>
+
+<style>
+  article {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+  }
+  h2 {
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+  }
+  time {
+    color: #666;
+    font-size: 0.8rem;
+  }
+  a {
+    color: #7e4bcc;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
