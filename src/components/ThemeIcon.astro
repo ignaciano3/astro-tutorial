@@ -35,12 +35,12 @@
 
 <script is:inline>
   function applyTheme() {
-    localStorage.theme === 'dark'
+    localStorage.theme === "dark"
       ? document.documentElement.classList.add("dark")
       : document.documentElement.classList.remove("dark");
   }
 
-  document.addEventListener('astro:after-swap', applyTheme);
+  document.addEventListener("astro:after-swap", applyTheme);
   applyTheme();
 </script>
 
@@ -65,7 +65,7 @@
       document.documentElement.classList.add("dark");
     }
 
-    window.localStorage.setItem("theme", theme);
+    window.localStorage.setItem("theme", theme!);
 
     const handleToggleClick = () => {
       const element = document.documentElement;
@@ -77,6 +77,6 @@
 
     document
       .getElementById("themeToggle")
-      .addEventListener("click", handleToggleClick);
+      ?.addEventListener("click", handleToggleClick);
   });
 </script>
